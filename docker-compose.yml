@@ -1,0 +1,8 @@
+services:
+  app:
+    build:
+      context: .
+    container_name: perm-300-app
+    command: ["/perm-300-app/docker/app.sh"]
+    ports:
+      - 7398:80
