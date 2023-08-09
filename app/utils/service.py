@@ -46,8 +46,7 @@ def parse_news() -> list:
             "date": value.find("div", class_="eventdate").text,
             "title": value.find("div", class_="eventtitle").text.strip(),
             "image": f"{PERM_URL}/{image}",
-            "description": value.find("div", class_="shadow").text,
-            "info": value.find("div", class_="shadow").text
+            "description": value.find("div", class_="shadow").text if value.find("div", class_="shadow") is not None else ""
         })
     return response_news
 
